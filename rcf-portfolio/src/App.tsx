@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Header from "./components/Header";
 
-function App() {
-  const [count, setCount] = useState(0)
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import { Toaster } from "sonner";
+
+const pages = {
+  home: <Home />,
+  about: <About />,
+  projects: <Projects />,
+  contact: <Contact />
+};
+
+const App = () => {
+  const [currentPage, setCurrentPage] = useState<"home" | "about" | "projects" | "contact">("home");
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="relative w-full h-screen overflow-hidden">
+      <Header setCurrentPage={setCurrentPage} />
+      <div className="w-full h-full flex ">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentPage}
+            initial={{ x: "100%", opacity: 0 }}
+            animate={{ x: "0%", opacity: 1 }}
+            exit={{ x: "-100%", opacity: 0 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
+            className="absolute w-full h-full flex items-center justify-center"
+          >
+            {pages[currentPage]}
+          </motion.div>
+        </AnimatePresence>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+      <Toaster richColors position="top-right" />
+    </div>
+  );
+};
 
-export default App
+export default App;
