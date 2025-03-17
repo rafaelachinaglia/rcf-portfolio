@@ -43,6 +43,15 @@ const ContactForm = () => {
     <form className="space-y-4 w-80" onSubmit={handleSubmit}>
       <FormField
         disabled={submitIsLoading}
+        id="name"
+        label="Nome"
+        onChange={handleChange}
+        placeholder="Digite seu nome"
+        type="text"
+        value={formData.name}
+      />
+      <FormField
+        disabled={submitIsLoading}
         id="email"
         label="E-mail"
         onChange={handleChange}
@@ -58,15 +67,6 @@ const ContactForm = () => {
         onChange={handleChange}
         placeholder="Digite sua mensagem aqui"
         value={formData.message}
-      />
-      <FormField
-        disabled={submitIsLoading}
-        id="name"
-        label="Nome"
-        onChange={handleChange}
-        placeholder="Digite seu nome"
-        type="text"
-        value={formData.name}
       />
 
       <Button className="mt-4 rounded-md w-full" disabled={submitIsLoading}>

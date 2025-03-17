@@ -28,6 +28,7 @@ const FormField = ({
   <div>
     <Label htmlFor={id} className="block text-sm font-medium text-gray-700">
       {label}
+      <span className="text-primary"> *</span>
     </Label>
     {isTextarea ? (
       <Textarea

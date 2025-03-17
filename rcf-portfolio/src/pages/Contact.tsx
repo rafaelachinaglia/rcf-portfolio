@@ -3,7 +3,7 @@ import ContactForm from "@/components/ContactForm";
 const Contact = () => {
   return (
     <div className="gap-x-16 grid grid-cols-2">
-      <div className="col-span-2 text-right mb-8">
+      <div className="col-span-2 mb-8 text-right">
         <h1>contato</h1>
         <span className="font-extralight ml-2">Vamos conversar?</span>
       </div>
