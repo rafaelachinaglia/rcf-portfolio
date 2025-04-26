@@ -1,5 +1,4 @@
 import { Input } from "./ui/input";
-import { Label } from "./ui/label";
 import { Textarea } from "./ui/textarea";
 
 interface FormFieldProps {
@@ -10,7 +9,6 @@ interface FormFieldProps {
   onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => void;
-  placeholder: string;
   type?: string;
   value: string;
 }
@@ -21,34 +19,29 @@ const FormField = ({
   isTextarea,
   label,
   onChange,
-  placeholder,
   type = "text",
   value,
 }: FormFieldProps) => (
   <div>
-    <Label htmlFor={id} className="block text-sm font-medium text-gray-700">
-      {label}
-      <span className="text-primary"> *</span>
-    </Label>
     {isTextarea ? (
       <Textarea
-        className="mt-2 w-full rounded-lg"
+        className="mt-2 w-full rounded-lg bg-primary/10"
         disabled={disabled}
         id={id}
         name={id}
         onChange={onChange}
-        placeholder={placeholder}
+        placeholder={label}
         required
         value={value}
       />
     ) : (
       <Input
-        className="mt-2 rounded-full"
+        className="mt-2 rounded-full bg-primary/10"
         disabled={disabled}
         id={id}
         name={id}
         onChange={onChange}
-        placeholder={placeholder}
+        placeholder={label}
         required
         type={type}
         value={value}

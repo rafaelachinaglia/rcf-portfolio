@@ -1,16 +1,25 @@
+import { useTheme } from "@/components/ui/theme-provider";
 import { motion } from "framer-motion";
 
 const Home = () => {
+    const { theme } = useTheme();
+
   return (
-    <div className="flex gap-x-28 h-full mt-[500px] justify-center text-muted-foreground w-full">
+    <div
+      className={`flex gap-x-28 h-full justify-center center w-full ${
+        theme === "dark" ? "text-white" : "text-muted-foreground"
+      }`}
+    >
       <motion.div
-        initial={{ opacity: 0, y: 40 }} 
-        animate={{ opacity: 1, y: 0 }} 
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 2.0, ease: "easeOut" }}
       >
         <h1>olá!</h1>
         <span className="text-2xl">Meu nome é Rafaela :)</span>
-        <p className="font-extralight">Sou desenvolvedora Front-End com foco em React e TypeScript.</p>
+        <p className="font-extralight">
+          Sou desenvolvedora Front-End com foco em React e TypeScript.
+        </p>
       </motion.div>
 
       <div className="bg-primary flex h-48 items-center justify-center rounded-full w-48">

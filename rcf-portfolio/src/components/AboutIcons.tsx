@@ -1,4 +1,4 @@
-import { Download, Linkedin } from "lucide-react";
+import { Download, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 
 const AboutIcons = () => {
@@ -15,6 +15,13 @@ const AboutIcons = () => {
       "noopener,noreferrer"
     );
   };
+  const handleGithubClick = () => {
+    window.open(
+      "https://github.com/rafaelachinaglia",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
 
   return (
     <div className="flex gap-x-8 items-center w-full">
@@ -25,6 +32,14 @@ const AboutIcons = () => {
         className="cursor-pointer text-primary"
         onClick={handleLinkedinClick}
       />
+      <Github
+        className="cursor-pointer text-primary"
+        onClick={handleGithubClick}
+      />
+      {/* <div className="flex text-primary gap-x-2 items-center">
+        <Mail />
+        <span className="text-sm">rafaelachinaglia@hotmail.com</span>
+      </div> */}
     </div>
   );
 };

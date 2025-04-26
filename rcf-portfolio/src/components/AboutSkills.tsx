@@ -1,16 +1,9 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./ui/accordion";
-
 const AboutSkills = () => {
   const skills = [
     {
       title: "Desenvolvimento",
       items: [
-        "Blazor", "Bootstrap", "C#", "CSS", "JavaScript", "NextJS",
+        "Angular", "Blazor", "Bootstrap", "C#", "CSS", "JavaScript", "NextJS",
         "ReactJS", "SQL Server", "Tailwind", "TypeScript", "Redux",
         "Zustand", "Shadcn"
       ].sort(),
@@ -26,28 +19,17 @@ const AboutSkills = () => {
   ];
 
   return (
-    <div>
-      <h2 className="font-medium text-2xl">Habilidades</h2>
-      <div className="grid w-full grid-cols-2 gap-12">
-        <div className="col-span-1">
-          {skills.map((category, index) => (
-            <Accordion key={index} collapsible type="single">
-              <AccordionItem value={`item-${index}`}>
-                <AccordionTrigger>{category.title}</AccordionTrigger>
-                <AccordionContent>
-                  <ul>
-                    {category.items.map((skill, idx) => (
-                      <li key={idx} className="list-disc list-inside">{skill}</li>
-                    ))}
-                  </ul>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          ))}
-        </div>
-        <div className="col-span-1">
-          <img src="/rcf-skills.jpg" height={600} width={600} />
-        </div>
+    <div className="bg-accent p-6 rounded-4xl">
+      <h1 className="font-medium text-2xl mb-4">Habilidades</h1>
+      <div className="space-y-4">
+        {skills.map((category, index) => (
+          <div key={index}>
+            <h2 className="font-semibold text-lg mb-1">{category.title}</h2>
+            <p className="text-base">
+              {category.items.join(" • ")}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );

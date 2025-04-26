@@ -29,16 +29,16 @@ const Projects = () => {
   };
 
   return (
-    <div>
-      <h1>Projetos</h1>
-      <span className="text-primary">Veja os projetos em destaque</span>
+    <div className="w-full">
+      <h1>projetos</h1>
+      <span className="text-primary mt-8">Veja os projetos em destaque</span>
       <Gallery
         items={images.map((image) => ({
           ...image,
           renderItem: (item: GalleryItem) => (
             <div
               onClick={() => handleImageClick(item.link)}
-              style={{ cursor: "pointer", maxWidth: "500px", margin: "0 auto" }}
+              style={{ cursor: "pointer", maxWidth: "400px", margin: "0 auto" }}
             >
               <img
                 src={item.thumbnail}
