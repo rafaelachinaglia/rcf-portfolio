@@ -1,4 +1,4 @@
-import { Download, Github, Linkedin, Mail } from "lucide-react";
+import { Download, Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 
 const AboutIcons = () => {

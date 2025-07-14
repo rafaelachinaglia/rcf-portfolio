@@ -14,11 +14,11 @@ const Header = ({ setCurrentPage }: HeaderProps) => {
   };
 
   return (
-    <div className="flex w-full px-5 pt-5 justify-between">
-      <div>
-        <span className="font-extrabold text-2xl text-primary">RCF</span>
+    <div className="w-full lg:flex pt-5 justify-between grid grid-cols-2">
+      <div className="col-span-2 lg:col-end-1">
+        <span className="font-extrabold text-2xl px-5 text-primary">RCF</span>
       </div>
-      <div className="text-right">
+      <div className="text-right col-span-2 lg:col-end-1">
         <Button variant={theme === "dark" ? "dark" : "link"} onClick={() => setCurrentPage("home")}>
           Home
         </Button>
@@ -31,7 +31,6 @@ const Header = ({ setCurrentPage }: HeaderProps) => {
         <Button variant={theme === "dark" ? "dark" : "link"} onClick={() => setCurrentPage("contact")}>
           Contato
         </Button>
-
         <Button variant={theme === "dark" ? "dark" : "link"} onClick={toggleTheme}>
           {theme === "dark" ? (
             <SunIcon className="font-extrabold" />
