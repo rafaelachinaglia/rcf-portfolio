@@ -12,7 +12,6 @@
     "test": "jest",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
