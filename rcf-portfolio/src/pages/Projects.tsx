@@ -29,28 +29,39 @@ const Projects = () => {
   };
 
   return (
-    <div className="w-full">
-      <h1>projetos</h1>
-      <span className="text-primary mt-8">Veja os projetos em destaque</span>
-      <Gallery
-        items={images.map((image) => ({
-          ...image,
-          renderItem: (item: GalleryItem) => (
-            <div
-              onClick={() => handleImageClick(item.link)}
-              style={{ cursor: "pointer", maxWidth: "400px", margin: "0 auto" }}
-            >
-              <img
-                src={item.thumbnail}
-                alt={item.description}
-                style={{ width: "100%" }}
-              />
-            </div>
-          ),
-        }))}
-      />
+    <div className="w-full px-4 md:px-8 lg:px-20 max-w-4xl mx-auto">
+      <h1 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-2">projetos</h1>
+      <span className="text-primary mt-2 block text-center md:text-left mb-6">
+        Veja os projetos em destaque
+      </span>
+      <div className="mt-4">
+        <Gallery
+          items={images.map((image) => ({
+            ...image,
+            renderItem: (item: GalleryItem) => (
+              <div
+                onClick={() => handleImageClick(item.link)}
+                className="cursor-pointer max-w-sm sm:max-w-md md:max-w-lg mx-auto p-2"
+              >
+                <img
+                  src={item.thumbnail}
+                  alt={item.description}
+                  className="w-full rounded-lg shadow-md transition-transform duration-300 hover:scale-105"
+                />
+                <p className="text-center mt-2 text-sm text-muted-foreground">
+                  {item.description}
+                </p>
+              </div>
+            ),
+          }))}
+          showThumbnails={true}
+          showPlayButton={false}
+          showFullscreenButton={false}
+        />
+      </div>
     </div>
   );
 };
 
 export default Projects;
+    
