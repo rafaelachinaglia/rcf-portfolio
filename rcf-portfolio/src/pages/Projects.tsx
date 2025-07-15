@@ -1,7 +1,7 @@
 import Gallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
-import contactImg from '/rcf-contact.jpg';
+import contactImg from '/rcf-contact.png';
 import skillsImg from '/rcf-skills.jpg';
 
 interface GalleryItem {

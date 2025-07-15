@@ -1,5 +1,5 @@
 import ContactForm from "@/components/ContactForm";
-import contactImg from '/rcf-contact.png'; // import da imagem
+import contactImg from '/rcf-contact.png'; 
 
 const Contact = () => {
   return (
