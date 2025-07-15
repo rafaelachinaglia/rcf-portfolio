@@ -1,4 +1,5 @@
 import ContactForm from "@/components/ContactForm";
+import contactImg from '/rcf-contact.png'; // import da imagem
 
 const Contact = () => {
   return (
@@ -13,7 +14,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="col-span-1">
-        <img src="/rcf-contact.png" height={400} width={400} />
+        <img src={contactImg} height={400} width={400} alt="Contato" />
       </div>
     </div>
   );

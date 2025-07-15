@@ -1,5 +1,6 @@
 import { useTheme } from "@/components/ui/theme-provider";
 import { motion } from "framer-motion";
+import memoji from '/rcf-memoji.png';
 
 const Home = () => {
   const { theme } = useTheme();
@@ -27,7 +28,7 @@ const Home = () => {
 
       <div className="bg-primary flex items-center justify-center rounded-full w-40 h-40 md:w-48 md:h-48">
         <img
-          src="/rcf-memoji.png"
+          src={memoji}
           alt="Rafaela Memoji"
           className="w-24 h-24 md:w-32 md:h-32 object-contain"
         />

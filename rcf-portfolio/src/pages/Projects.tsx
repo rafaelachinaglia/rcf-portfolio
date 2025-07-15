@@ -1,6 +1,9 @@
 import Gallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
+import contactImg from '/rcf-contact.jpg';
+import skillsImg from '/rcf-skills.jpg';
+
 interface GalleryItem {
   original: string;
   thumbnail: string;
@@ -10,14 +13,14 @@ interface GalleryItem {
 
 const images: GalleryItem[] = [
   {
-    original: "/rcf-contact.jpg",
-    thumbnail: "/rcf-contact.jpg",
+    original: contactImg,
+    thumbnail: contactImg,
     description: "TESTE 0",
     link: "https://www.exemplo1.com",
   },
   {
-    original: "/rcf-skills.jpg",
-    thumbnail: "/rcf-skills.jpg",
+    original: skillsImg,
+    thumbnail: skillsImg,
     description: "TESTE 1",
     link: "https://www.exemplo2.com",
   },
@@ -64,4 +67,3 @@ const Projects = () => {
 };
 
 export default Projects;
-    
