@@ -1,8 +1,7 @@
-import Gallery from "react-image-gallery";
+// import Gallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-
-import contactImg from '/rcf-contact.png';
-import skillsImg from '/rcf-skills.jpg';
+// import contactImg from '/rcf-contact.png';
+// import skillsImg from '/rcf-skills.jpg';
 
 interface GalleryItem {
   original: string;
@@ -11,25 +10,25 @@ interface GalleryItem {
   link: string;
 }
 
-const images: GalleryItem[] = [
-  {
-    original: contactImg,
-    thumbnail: contactImg,
-    description: "TESTE 0",
-    link: "https://www.exemplo1.com",
-  },
-  {
-    original: skillsImg,
-    thumbnail: skillsImg,
-    description: "TESTE 1",
-    link: "https://www.exemplo2.com",
-  },
-];
+// const images: GalleryItem[] = [
+//   {
+//     original: contactImg,
+//     thumbnail: contactImg,
+//     description: "TESTE 0",
+//     link: "https://www.exemplo1.com",
+//   },
+//   {
+//     original: skillsImg,
+//     thumbnail: skillsImg,
+//     description: "TESTE 1",
+//     link: "https://www.exemplo2.com",
+//   },
+// ];
 
 const Projects = () => {
-  const handleImageClick = (link: string) => {
-    window.open(link, "_blank");
-  };
+  // const handleImageClick = (link: string) => {
+  //   window.open(link, "_blank");
+  // };
 
   return (
     <div className="w-full px-4 md:px-8 lg:px-20 max-w-4xl mx-auto">
@@ -38,7 +37,8 @@ const Projects = () => {
         Veja os projetos em destaque
       </span>
       <div className="mt-4">
-        <Gallery
+        <span>Em construção...</span>
+        {/* <Gallery
           items={images.map((image) => ({
             ...image,
             renderItem: (item: GalleryItem) => (
@@ -60,7 +60,7 @@ const Projects = () => {
           showThumbnails={true}
           showPlayButton={false}
           showFullscreenButton={false}
-        />
+        /> */}
       </div>
     </div>
   );
